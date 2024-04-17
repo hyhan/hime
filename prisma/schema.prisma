@@ -18,3 +18,23 @@ model User {
   email String  @unique
   name  String?
 }
+
+model SnippetTag {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  Snippet   Snippet? @relation(fields: [snippetId], references: [id])
+  snippetId Int?
+}
+
+model Snippet {
+  id          Int          @id @default(autoincrement())
+  title       String
+  tags        SnippetTag[]
+  description String?
+  content     String       @db.Text
+  published   Boolean      @default(false)
+  createAt    DateTime     @default(now())
+  updateAt    DateTime     @updatedAt
+}
+
+model Bolg
