@@ -3,19 +3,14 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { EraserIcon } from '@radix-ui/react-icons'
-import { useCreateUser } from '../use'
 
 export default function TheButton() {
-  const createUserQuery = useCreateUser();
-  const onClick = () => {
-    createUserQuery.runAsync()
-  }
   
   return (
     <Card>
       <CardHeader>TheButton</CardHeader>
       <CardContent className="flex gap-2">
-        <Button variant="outline" onClick={onClick}>outline</Button>
+        <Button variant="outline">outline</Button>
         <Button variant="default">default</Button>
         <Button variant="destructive">destructive</Button>
         <Button variant="link">link</Button>

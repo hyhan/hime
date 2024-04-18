@@ -14,9 +14,11 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  name     String?
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
 }
 
 model SnippetTag {
@@ -36,5 +38,3 @@ model Snippet {
   createAt    DateTime     @default(now())
   updateAt    DateTime     @updatedAt
 }
-
-model Bolg

@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "db:gen": "prisma generate",
-    "db:dev": "prisma migrate dev"
+    "db:dev": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
